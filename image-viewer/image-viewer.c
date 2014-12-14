@@ -26,3 +26,4 @@ int main(int argc, char** argv)
   return 0;
 }
 
+/* vim: set path+=/usr/include/gtk-2.0,/usr/lib/gtk-2.0/include,/usr/include/pango-1.0,/usr/include/atk-1.0,/usr/include/cairo,/usr/include/pixman-1,/usr/include/libdrm,/usr/include/gdk-pixbuf-2.0,/usr/include/libpng16,/usr/include/pango-1.0,/usr/include/glib-2.0,/usr/lib/glib-2.0/include,/usr/include/freetype2,/usr/include/libpng16,/usr/include/harfbuzz,/usr/include/freetype2,/usr/include/libpng16,/usr/include/harfbuzz: */
