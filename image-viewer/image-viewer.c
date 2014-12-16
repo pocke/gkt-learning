@@ -16,6 +16,7 @@ int main(int argc, char** argv)
 
   gtk_init(&argc, &argv);
 
+
   // window
   GtkWidget *window;
   window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
@@ -26,13 +27,20 @@ int main(int argc, char** argv)
     vbox = gtk_vbox_new(FALSE, 2);
     gtk_container_add(GTK_CONTAINER(window), vbox);
 
+
+    // scroll window
+    GtkWidget *scroll_window;
+    scroll_window = gtk_scrolled_window_new(NULL, NULL);
+    gtk_box_pack_start(GTK_BOX(vbox), scroll_window,  TRUE,  TRUE,  0);
+    gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scroll_window), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+
     {
       // image
       GtkWidget *image;
       image = gtk_image_new_from_file(argv[1]);
 
 
-      gtk_box_pack_start(GTK_BOX(vbox), image,  TRUE,  TRUE,  0);
+      gtk_scrolled_window_add_with_viewport(GTK_SCROLLED_WINDOW(scroll_window), image);
     }
 
     {
