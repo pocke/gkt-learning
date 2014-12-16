@@ -23,9 +23,14 @@ func main() {
 	vbox := gtk.NewVBox(false, 2)
 	window.Add(vbox)
 
+	// scroll window
+	scroll_window := gtk.NewScrolledWindow(nil, nil)
+	scroll_window.SetPolicy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+	vbox.PackStart(scroll_window, true, true, 0)
+
 	// image
 	image := gtk.NewImageFromFile(os.Args[1])
-	vbox.PackStart(image, true, true, 0)
+	scroll_window.AddWithViewPort(image)
 
 	// button
 	button := gtk.NewButtonWithLabel("Quit")
